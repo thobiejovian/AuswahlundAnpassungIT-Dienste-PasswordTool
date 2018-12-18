@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_0dva50d" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decidingFactor" name="Manager Decides according to data">
+    <extensionElements>
+      <biodi:bounds x="150" y="151" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1">
+      <input id="input_1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>Worker's Title</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0sg3vch">
+        <inputExpression id="LiteralExpression_0eeu4zo" typeRef="string">
+          <text>Duration of work</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1k5l73t">
+        <inputExpression id="LiteralExpression_0ts0k4f" typeRef="string">
+          <text>Is the employee in the project</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" name="Reply" typeRef="string" />
+      <rule id="DecisionRule_0btbhph">
+        <inputEntry id="UnaryTests_1ggzvd0">
+          <text>Working Student</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_123e3zh">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ah5g1m">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1glgcq1">
+          <text>Reject permission</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0z0bepv">
+        <inputEntry id="UnaryTests_1he9den">
+          <text>Intern</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0irv39l">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16yftbn">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1x4k3j0">
+          <text>Reject permission</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13eaxc6">
+        <inputEntry id="UnaryTests_0glfph8">
+          <text>Employee</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sfb3lo">
+          <text>below 2 years</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x7j5it">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rbotgz">
+          <text>Reject permission</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lmsfsn">
+        <inputEntry id="UnaryTests_18gcrmi">
+          <text>Employee</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15iudo7">
+          <text>above 2 years</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15w9zmg">
+          <text>no</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gnnsq0">
+          <text>Reject permission</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04in0dy">
+        <inputEntry id="UnaryTests_0bj03sx">
+          <text>Employee</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tvrqal">
+          <text>above 2 years</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12u75z4">
+          <text>yes</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1uenw2o">
+          <text>Accept permission</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
