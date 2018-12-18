@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1ndfsaf" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="loginDecision" name="Login Criteria">
+    <extensionElements>
+      <biodi:bounds x="458" y="193" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1">
+      <input id="input_1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>Which level</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" name="Permission requirements" typeRef="string" />
+      <rule id="DecisionRule_1gk84sy">
+        <inputEntry id="UnaryTests_1iqtxxf">
+          <text>0-1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e18k18">
+          <text>Dont need permission</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nyko9m">
+        <inputEntry id="UnaryTests_17pi39k">
+          <text>2-3</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0redy80">
+          <text>Need permission from manager</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
