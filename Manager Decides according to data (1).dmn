@@ -2,7 +2,7 @@
 <definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_0dva50d" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
   <decision id="decidingFactor" name="Manager Decides according to data">
     <extensionElements>
-      <biodi:bounds x="150" y="151" width="180" height="80" />
+      <biodi:bounds x="508" y="98" width="180" height="80" />
     </extensionElements>
     <decisionTable id="decisionTable_1">
       <input id="input_1">
@@ -93,4 +93,71 @@
       </rule>
     </decisionTable>
   </decision>
+  <decision id="Decision_0eymoc4" name="Employee Title">
+    <extensionElements>
+      <biodi:bounds x="473" y="289" width="180" height="80" />
+      <biodi:edge source="decidingFactor">
+        <biodi:waypoints x="591" y="178" />
+        <biodi:waypoints x="570" y="289" />
+      </biodi:edge>
+      <biodi:edge source="InputData_1l86x3s">
+        <biodi:waypoints x="450" y="486" />
+        <biodi:waypoints x="534" y="369" />
+      </biodi:edge>
+    </extensionElements>
+    <informationRequirement>
+      <requiredDecision href="#decidingFactor" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredInput href="#InputData_1l86x3s" />
+    </informationRequirement>
+  </decision>
+  <decision id="Decision_1ho5wzs" name="Roles of the Employee on the Project ">
+    <extensionElements>
+      <biodi:bounds x="744" y="289" width="180" height="80" />
+      <biodi:edge source="decidingFactor">
+        <biodi:waypoints x="647" y="178" />
+        <biodi:waypoints x="785" y="289" />
+      </biodi:edge>
+      <biodi:edge source="InputData_1kw9td0">
+        <biodi:waypoints x="841" y="484" />
+        <biodi:waypoints x="836" y="369" />
+      </biodi:edge>
+    </extensionElements>
+    <informationRequirement>
+      <requiredDecision href="#decidingFactor" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredInput href="#InputData_1kw9td0" />
+    </informationRequirement>
+  </decision>
+  <decision id="Decision_1g3z529" name="Duration of Employee Work">
+    <extensionElements>
+      <biodi:bounds x="187" y="293" width="180" height="80" />
+      <biodi:edge source="decidingFactor">
+        <biodi:waypoints x="532" y="178" />
+        <biodi:waypoints x="343" y="293" />
+      </biodi:edge>
+      <biodi:edge source="InputData_1l86x3s">
+        <biodi:waypoints x="404" y="486" />
+        <biodi:waypoints x="310" y="373" />
+      </biodi:edge>
+    </extensionElements>
+    <informationRequirement>
+      <requiredDecision href="#decidingFactor" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredInput href="#InputData_1l86x3s" />
+    </informationRequirement>
+  </decision>
+  <inputData id="InputData_1l86x3s" name="Employees Data on the System">
+    <extensionElements>
+      <biodi:bounds x="349" y="486" width="125" height="45" />
+    </extensionElements>
+  </inputData>
+  <inputData id="InputData_1kw9td0" name="Project Data on the System">
+    <extensionElements>
+      <biodi:bounds x="779" y="484" width="125" height="45" />
+    </extensionElements>
+  </inputData>
 </definitions>
