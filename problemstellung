@@ -1,0 +1,88 @@
+Team Roles :
+
+Nico Zahmel : Ansprechpartner Camunda und BPM Expert
+Dennis Oztürk : Praxis-experte
+Thobie Danar Jovian : Github and Service Orchestrierung Experte
+Ila Ilyas : Client-Server Experte
+Gerry Andreas : Browserbasierte Experte
+Evren Durmaz : DMN-Experte
+
+
+
+Password Storage and Authentication Tool
+
+For many of these software tools, as well as for access to applications, websites, shares and document repositories,  are required sensitive data such as passwords or keys(generalizing: secrets) to allow the users access to selected data. Employees receive personalized access authorizations from an administrator to protect stored information and data from unauthorized access by unauthorized persons.
+
+
+Problem Outline: 
+
+
+The division SPA has a heterogeneous IT landscape, Specifically, the IT landscape, which consists of the Windows and Linux computers of the employees as well as several virtual machines, Windows servers, Linux servers, ESX servers, and several cloud accounts are used for infrastructure or customer projects at the provider Amazon Web Services. Not only the passwords of individual employees but also other sensitive data such as certificates, private  keys or shared(root) passwords are used to protect trade secrets. These must be maintained by the employees, that is selected according to the company guidelines, regularly renewed and then noted at best. Whether every employee keeps his passwords in their mind, using a password management tool that stores passwords in an encrypted or unencrypted file on the computer, or even writes down and puts them under the keyboard, can not be controlled. Although the IT department provides employees with a password management tool for voluntary use, this is a royalty-free open source tool with very limited functionality. Here each user can only manage his own passwords locally. The desire and need for a more comprehensive solution that also makes it possible to manage certificates, key files, and the sharing of share passwords is therefore great.
+ 
+
+
+
+Goals:  
+
+
+The aim of this task is to investigate how a password management system can be integrated 
+into the existing infrastructure.
+
+
+Stakeholder:
+
+Extern: Behörden, Medien
+
+Verbunden: Kunden, Lieferanten, Händler
+
+Intern: Mitarbeiter, Führungskräfte Administratoren
+
+
+Themenfelder: 
+
+Dokumentenmanagement, IT-Service-Management, Datenmanagement, Sourcecode-Verwaltung,
+
+
+
+Requirements: (Until now still copy paste, for easy understanding)
+
+Four-Eyes Principle: 
+
+The four-eyes principle means that a certain activity, i.e a decision, transaction, etc. Must be approved by at least two people. This controlling mechanism is used to facilitate the delegation of authority and increase transparency. 
+
+Need to Know Principle : 
+
+describes the restriction of data which is considered very sensitive. Under need-to-know restrictions, even if one has all the necessary official approvals (such as a security clearance) to access certain information, one would not be given access to such information, or read into a clandestine operation, unless one has a specific need to know; that is, access to the information must be necessary for one to conduct one's official duties
+
+
+
+Key Escrow : 
+
+Key escrow is an arrangement in which the keys needed to decrypt encrypted data are held in escrow so that, under certain circumstances, an authorized third party may gain access to those keys. These third parties may include businesses, who may want access to employees' private communications, or governments, who may wish to be able to view the contents of encrypted communications.
+
+
+Tool :
+
+Confluence, Camunda, Github
+
+Framework: 
+
+Frameworks: CMMI-ACQ, V1.3, Scrum 
+
+
+
+Source : 
+
+Need to know :
+https://en.wikipedia.org/wiki/Need_to_know
+
+Four Eyes Principle:
+https://www.unido.org/overview/member-states/change-management/faq/what-four-eyes-principle
+
+Key Escrow:
+https://en.wikipedia.org/wiki/Key_escrow
+
+
+
+
+
