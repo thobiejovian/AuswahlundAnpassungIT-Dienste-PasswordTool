@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="managerDecide" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <inputData id="InputData_1sc86wi" name="Title of the Worker">
+    <extensionElements>
+      <biodi:bounds x="125" y="543" width="125" height="45" />
+    </extensionElements>
+  </inputData>
+  <inputData id="InputData_1odcn47" name="Duration of Work">
+    <extensionElements>
+      <biodi:bounds x="325" y="547" width="125" height="45" />
+    </extensionElements>
+  </inputData>
+  <inputData id="InputData_1xixvgf" name="Roles of the Employee on the Project">
+    <extensionElements>
+      <biodi:bounds x="509" y="546" width="125" height="45" />
+    </extensionElements>
+  </inputData>
+  <knowledgeSource id="KnowledgeSource_0sjg5pi" name="Employees Data on the System">
+    <extensionElements>
+      <biodi:bounds x="693" y="532" width="100" height="63" />
+    </extensionElements>
+  </knowledgeSource>
+  <decision id="decidingFactor" name="Manager decides according to data">
+    <extensionElements>
+      <biodi:bounds x="444" y="156" width="180" height="80" />
+      <biodi:edge source="InputData_1sc86wi">
+        <biodi:waypoints x="207" y="543" />
+        <biodi:waypoints x="459" y="236" />
+      </biodi:edge>
+      <biodi:edge source="KnowledgeSource_0sjg5pi">
+        <biodi:waypoints x="731" y="532" />
+        <biodi:waypoints x="624" y="236" />
+      </biodi:edge>
+      <biodi:edge source="InputData_1xixvgf">
+        <biodi:waypoints x="556" y="546" />
+        <biodi:waypoints x="556" y="242" />
+      </biodi:edge>
+      <biodi:edge source="InputData_1odcn47">
+        <biodi:waypoints x="396" y="547" />
+        <biodi:waypoints x="502" y="238" />
+      </biodi:edge>
+    </extensionElements>
+    <informationRequirement>
+      <requiredInput href="#InputData_1sc86wi" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredInput href="#InputData_1xixvgf" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredInput href="#InputData_1odcn47" />
+    </informationRequirement>
+    <authorityRequirement>
+      <requiredAuthority href="#KnowledgeSource_0sjg5pi" />
+    </authorityRequirement>
+    <decisionTable id="DecisionTable_0mq2sle">
+      <input id="InputClause_1fvv6g3" label="Title">
+        <inputExpression id="LiteralExpression_128g6n5" typeRef="string">
+          <text>title</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0jae3h2">
+          <text>"Intern","Employee","Working Student"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0hyrgyd" label="duration">
+        <inputExpression id="LiteralExpression_0avwl7w" typeRef="integer">
+          <text>duration</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_03fekfm" label="Employee on the project">
+        <inputExpression id="LiteralExpression_18gfwik" typeRef="boolean">
+          <text>onProject</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0rjhl45" label="Allowed to work on critical project" name="Allowed to work on critical project" typeRef="boolean" />
+      <rule id="DecisionRule_1mr58le">
+        <description>Not allowed to work on critical project</description>
+        <inputEntry id="UnaryTests_0y9p962">
+          <text>"Intern","Working Student"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w1hs5e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hdpozl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1b79isu">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_105s4ol">
+        <description>Not allowed to work on critical project</description>
+        <inputEntry id="UnaryTests_000j6jg">
+          <text>"Employee"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_048ocjf">
+          <text>&lt;= 2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1863zjk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17z8960">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0e2qw1b">
+        <description>Not allowed to work on critical project</description>
+        <inputEntry id="UnaryTests_0v6svnk">
+          <text>"Employee"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vlwwf0">
+          <text>&gt; 2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06rwiq5">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12j6i1e">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1hcs8mh">
+        <description>Allowed to work on critical project</description>
+        <inputEntry id="UnaryTests_14hozs2">
+          <text>"Employee"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lks1g4">
+          <text>&gt; 2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kl16h4">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pvnr02">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
